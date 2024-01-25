@@ -5,3 +5,7 @@ saludar=function(){
     console.log("Ingresar a Saludar");
     
 }
+recuperarTexto=function(idComponente){
+    let Componente;
+    let valoIngresado;
+}
