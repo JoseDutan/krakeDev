@@ -3,12 +3,12 @@ validarPlaca = function () {
     let erroresEstructura = validarEstructura(placa);
 
     if (erroresEstructura === null) {
-        let provincia = obtenerProvincia(placa);
+        let tipoVehiculo = obtenerTipoVehiculo(placa);
 
-        if (provincia !== null) {
-            document.getElementById("resultado").innerText = "Provincia: " + provincia;
+        if (tipoVehiculo !== null) {
+            document.getElementById("resultado").innerText = "Tipo de vehiculo: " + tipoVehiculo;
         } else {
-            document.getElementById("resultado").innerText = "Provincia Incorrecta.";
+            document.getElementById("resultado").innerText = "Tipo de vehiculo incorrecto.";
         }
     } else {
         document.getElementById("resultado").innerText = "ESTRUCTURA INCORRECTA";

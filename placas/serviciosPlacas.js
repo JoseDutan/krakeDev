@@ -79,7 +79,7 @@ obtenerProvincia = function (placa) {
 obtenerTipoVehiculo = function (placa) {
     let primeraLetra = placa.charAt(1)
 
-    if(primeraLetra == "A" || "Z"){
+    if(primeraLetra == "A" || primeraLetra == "Z"){
         return "Vehiculos Comerciales"
     }else if(primeraLetra == "E"){
         return "Vehículos gubernamentales"
@@ -91,5 +91,20 @@ obtenerTipoVehiculo = function (placa) {
         return "Vehículos municipales"
     }else if(primeraLetra == "Cualquiera menos las anteriores"){
         return "Vehículo particular (privado)"
+    }
+}
+
+obtenerDiaPicoYPlaca=function(placa){
+    let primeraLetra = placa.charAt(7)
+    if(primeraLetra == "1" || primeraLetra == "2"){
+        return "Lunes"
+    }else if(primeraLetra == "3" || primeraLetra == "4"){
+        return "Martes"
+    }else if(primeraLetra == "5" || primeraLetra == "6"){
+        return "Miercoles"
+    }else if(primeraLetra == "7" || primeraLetra == "8"){
+        return "Jueves"
+    }else if(primeraLetra == "9" || primeraLetra == "0"){
+        return "Viernes"
     }
 }
