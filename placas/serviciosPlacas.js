@@ -82,15 +82,15 @@ obtenerTipoVehiculo = function (placa) {
     if(primeraLetra == "A" || primeraLetra == "Z"){
         return "Vehiculos Comerciales"
     }else if(primeraLetra == "E"){
-        return "Vehículos gubernamentales"
+        return "Vehiculos gubernamentales"
     }else if(primeraLetra == "X"){
-        return "Vehículos de uso oficial"
+        return "Vehiculos de uso oficial"
     }else if(primeraLetra == "S"){
-        return "Vehículos del gobierno provincial"
+        return "Vehiculos del gobierno provincial"
     }else if(primeraLetra == "M"){
-        return "Vehículos municipales"
+        return "Vehiculos municipales"
     }else if(primeraLetra == "Cualquiera menos las anteriores"){
-        return "Vehículo particular (privado)"
+        return "Vehiculo particular (privado)"
     }
 }
 
