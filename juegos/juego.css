@@ -1,0 +1,37 @@
+.principal{
+    display: flex;
+}
+.titulo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 100px;
+    font-size: 50px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.botones{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+}
+.limpiar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.estiloBoton{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+
+.resultado{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
