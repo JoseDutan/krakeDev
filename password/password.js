@@ -7,7 +7,7 @@ ejecutarValidacion = function () {
     if (errorer== "") {
         alert("Contraseña Correcta")
     } else {
-        alert("Contraseña Incorrecta")
+        alert("Error en la contraseña:\n" + errorer)
     }
 }
 
