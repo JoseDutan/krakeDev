@@ -63,3 +63,4 @@ mostraNota=function(){
     contenidoTabla+="</table>"
     cmpTabla.innerHTML=contenidoTabla;
 }
+//ejemplos de clase
