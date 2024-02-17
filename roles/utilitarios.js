@@ -33,7 +33,16 @@ recuperarFloat = function(idComponente){
     let valorCaja= recuperarTexto(idComponente);
     let valorFlotante = parseFloat(valorCaja);
     return valorFlotante;
- }
+}
+
+esMayuscula = function (caracter) {
+    let codigoAscii = caracter.charCodeAt(0);
+    if(codigoAscii >= 65 && codigoAscii <= 90){
+        return true
+    } else{
+        return false
+    }
+}
 
 mostrarComponente = function(idComponente){
     document.getElementById(idComponente).style.display = "block";
