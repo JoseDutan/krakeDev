@@ -4,12 +4,19 @@ let empleados = [
     { cedula: "0302578166", nombre: "Jose", apellido: "Dutan", sueldo: 600.0 }
 ]
 
+let esNuevo = false;
+
 mostrarOpcionEmpleado = function () {
     let mostrar;
     mostrar = mostrarComponente("divEmpleado");
     mostrar = ocultarComponente("divRol");
     mostrar = ocultarComponente("divResumen");
     mostrar = mostrarEmpleado();
+    deshabilitarComponente("txtCedula");
+    deshabilitarComponente("txtNombre");
+    deshabilitarComponente("txtApellido");
+    deshabilitarComponente("txtSueldo");
+    deshabilitarComponente("btnGuardar");
 }
 
 mostrarOpcionRol = function () {
@@ -46,4 +53,14 @@ mostrarEmpleado = function () {
     }
     contenidoTabla += "</table>"
     cmpTabla.innerHTML = contenidoTabla;
+}
+
+ejecutraNuevo = function () {
+    esNuevo = true;
+    habilitarComponente("txtCedula");
+    habilitarComponente("txtNombre");
+    habilitarComponente("txtApellido");
+    habilitarComponente("txtSueldo");
+    habilitarComponente("btnGuardar");
+
 }
