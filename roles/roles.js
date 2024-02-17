@@ -119,49 +119,54 @@ guardar = function () {
                             alert("Empleado Guardado Correctamente")
                             mostrarEmpleado();
                             deshabilitar();
-                            esNuevo=false
-                        } else {
-                            alert("Ya existe un empleado con la cedula " + valorCedula + " " + "En lugar de " + valorCedula);
-                            let empleadoEncontrado=buscarEmpleado(objetoEmpleado.cedula);
                         }
+                    if (esNuevo == false) {
+                        objetoEmpleado.cedula = valorCedula
+                        objetoEmpleado.nombre = valorNombre;
+                        objetoEmpleado.apellido = valorApellido;
+                        objetoEmpleado.sueldo = valorSueldo;
+                        guardarEmpleado = buscarEmpleado(objetoEmpleado);
+                        alert("EMPLEADO MODIFICADO EXITOSAMENTE");
+                        mostrarEmpleado();
+                        deshabilitar();
+                    }
+
                     } else {
-                        alert("Revise sus datos");
+                        mostrarTexto("lblErrorSueldo", "El valor del suledo debe ser entre 400 y 5000 dolares");
                     }
                 } else {
-                    mostrarTexto("lblErrorSueldo", "El valor del suledo debe ser entre 400 y 5000 dolares");
+                    mostrarTexto("lblErrorApellido", "El apellido debe tener al menos 3 caracteres y deben de ser Mayusculas");
                 }
             } else {
-                mostrarTexto("lblErrorApellido", "El apellido debe tener al menos 3 caracteres y deben de ser Mayusculas");
+                mostrarTexto("lblErrorNombre", "El nombre debe tener al menos 3 caracteres y deben de ser mayusculas");
             }
         } else {
-            mostrarTexto("lblErrorNombre", "El nombre debe tener al menos 3 caracteres y deben de ser mayusculas");
+            mostrarTexto("lblErrorCedula", "La cedula debe tener 10 numeros");
         }
-    } else {
-        mostrarTexto("lblErrorCedula", "La cedula debe tener 10 numeros");
     }
-}
 
-deshabilitar = function () {
-    deshabilitarComponente("txtCedula");
-    deshabilitarComponente("txtNombre");
-    deshabilitarComponente("txtApellido");
-    deshabilitarComponente("txtSueldo");
-    deshabilitarComponente("btnGuardar");
-}
-
-ejecutarBusqueda = function () {
-    let valorCedula = recuperarTexto("txtBusquedaCedula");
-    let empleado = buscarEmpleado(valorCedula);
-    if (empleado === null) {
-        alert("EMPLEADO NO EXISTE");
-    } else {
-        mostrarTextoEnCaja("txtCedula", empleado.cedula);
-        mostrarTextoEnCaja("txtNombre", empleado.nombre);
-        mostrarTextoEnCaja("txtApellido", empleado.apellido);
-        mostrarTextoEnCaja("txtEdad", empleado.sueldo);
+    deshabilitar = function () {
         deshabilitarComponente("txtCedula");
-        habilitarComponente("txtNombre");
-        habilitarComponente("txtApellido");
-        habilitarComponente("txtSueldo");
+        deshabilitarComponente("txtNombre");
+        deshabilitarComponente("txtApellido");
+        deshabilitarComponente("txtSueldo");
+        deshabilitarComponente("btnGuardar");
+    }
+
+    ejecutarBusqueda = function () {
+        let valorCedula = recuperarTexto("txtBusquedaCedula");
+        let empleado = buscarEmpleado(valorCedula);
+        if (empleado === null) {
+            alert("EMPLEADO NO EXISTE");
+        } else {
+            mostrarTextoEnCaja("txtCedula", empleado.cedula);
+            mostrarTextoEnCaja("txtNombre", empleado.nombre);
+            mostrarTextoEnCaja("txtApellido", empleado.apellido);
+            mostrarTextoEnCaja("txtEdad", empleado.sueldo);
+            deshabilitarComponente("txtCedula");
+            habilitarComponente("txtNombre");
+            habilitarComponente("txtApellido");
+            habilitarComponente("txtSueldo");
+        }
     }
 }
