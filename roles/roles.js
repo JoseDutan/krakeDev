@@ -136,8 +136,8 @@ guardar = function () {
             mostrarEmpleado();
             deshabilitar();
         }
-    } 
-    if(esNuevo == false){
+    }
+    if (esNuevo == false) {
         objetoEmpleado.cedula = valorCedula
         objetoEmpleado.nombre = valorNombre;
         objetoEmpleado.apellido = valorApellido;
@@ -174,11 +174,23 @@ ejecutarBusqueda = function () {
     }
 }
 
-limpiar=function(){
+limpiar = function () {
     mostrarTextoEnCaja("txtCedula", "");
     mostrarTextoEnCaja("txtNombre", "");
     mostrarTextoEnCaja("txtApellido", "");
     mostrarTextoEnCaja("txtSueldo", "");
-    esNuevo=false;
+    esNuevo = false;
     deshabilitar();
+}
+
+buscarporRol = function () {
+    let valorIngresado = recuperarTexto("txtBusquedaCedulaRol");
+    let empleado = buscarEmpleado(valorIngresado);
+    if (empleados != null) {
+        mostrarTexto("infoCedula", empleado.cedula);
+        mostrarTexto("infoNombre", empleado.nombre + empleados.apellido);
+        mostrarTexto("infoSueldo", empleado.sueldo);
+    } else (
+        alert("EL EMPLEADO NO EXISTE")
+    )
 }
