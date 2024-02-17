@@ -188,7 +188,7 @@ buscarporRol = function () {
     let empleado = buscarEmpleado(valorIngresado);
     if (empleados != null) {
         mostrarTexto("infoCedula", empleado.cedula);
-        mostrarTexto("infoNombre", empleado.nombre + empleados.apellido);
+        mostrarTexto("infoNombre", empleado.nombre +" "+ empleado.apellido);
         mostrarTexto("infoSueldo", empleado.sueldo);
     } else (
         alert("EL EMPLEADO NO EXISTE")
