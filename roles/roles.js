@@ -119,8 +119,10 @@ guardar = function () {
                             alert("Empleado Guardado Correctamente")
                             mostrarEmpleado();
                             deshabilitar();
-                        }else{
-                            alert("Ya existe un empleado con la cedula " + valorCedula + " "+ "En lugar de " + valorCedula);
+                            esNuevo=false
+                        } else {
+                            alert("Ya existe un empleado con la cedula " + valorCedula + " " + "En lugar de " + valorCedula);
+                            let empleadoEncontrado=buscarEmpleado(objetoEmpleado.cedula);
                         }
                     } else {
                         alert("Revise sus datos");
@@ -139,10 +141,27 @@ guardar = function () {
     }
 }
 
-deshabilitar = function() {
+deshabilitar = function () {
     deshabilitarComponente("txtCedula");
     deshabilitarComponente("txtNombre");
     deshabilitarComponente("txtApellido");
     deshabilitarComponente("txtSueldo");
     deshabilitarComponente("btnGuardar");
+}
+
+ejecutarBusqueda = function () {
+    let valorCedula = recuperarTexto("txtBusquedaCedula");
+    let empleado = buscarEmpleado(valorCedula);
+    if (empleado === null) {
+        alert("EMPLEADO NO EXISTE");
+    } else {
+        mostrarTextoEnCaja("txtCedula", empleado.cedula);
+        mostrarTextoEnCaja("txtNombre", empleado.nombre);
+        mostrarTextoEnCaja("txtApellido", empleado.apellido);
+        mostrarTextoEnCaja("txtEdad", empleado.sueldo);
+        deshabilitarComponente("txtCedula");
+        habilitarComponente("txtNombre");
+        habilitarComponente("txtApellido");
+        habilitarComponente("txtSueldo");
+    }
 }
